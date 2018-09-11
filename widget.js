@@ -2555,7 +2555,7 @@ chilipeppr.publish("/com-chilipeppr-widget-serialport/send", "G1 X10 F500\\n");
             }
         },
         getBaudRates : function() {
-            var bauds = ["2,400", "4,800", "9,600", "19,200", "38,400", "57,600", "115,200", "230,400"];
+            var bauds = ["2,400", "4,800", "9,600", "19,200", "38,400", "57,600", "115,200", "230,400", "250,000"];
             var baudHtml = "";
             $.each(bauds, function(i, item) {
                 var clean = item.replace(/,/, "");
