@@ -332,17 +332,17 @@ cprequire_test(["inline:com-chilipeppr-widget-serialport"], function (sp) {
     
     // we need to also load the serial port console to make sure they are synced
     // Inject new div to contain widget or use an existing div with an ID
-    $("body").append('<' + 'div id="myDivWidgetSpconsole"><' + '/div>');
+    $("body").append('<' + 'div id="com-chilipeppr-widget-serialport"><' + '/div>');
     
     chilipeppr.load(
-      "#myDivWidgetSpconsole",
+      "#com-chilipeppr-widget-serialport",
       "http://raw.githubusercontent.com/chilipeppr/widget-console/master/auto-generated-widget.html",
     //   "http://widget-console-chilipeppr.c9users.io/widget.html",
       function() {
         // Callback after widget loaded into #myDivWidgetSpconsole
         // Now use require.js to get reference to instantiated widget
         cprequire(
-          ["inline:com-chilipeppr-widget-spconsole"], // the id you gave your widget
+          ["inline:com-chilipeppr-widget-serialport"], // the id you gave your widget
           function(myObjWidgetSpconsole) {
             // Callback that is passed reference to the newly loaded widget
             console.log("Widget / Serial Port Console v1.7 just got loaded.", myObjWidgetSpconsole);
