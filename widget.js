@@ -125,7 +125,7 @@ cprequire_test(["inline:com-chilipeppr-widget-serialport"], function (sp) {
     
     chilipeppr.load(
       "#com-chilipeppr-widget-serialport",
-      "http://raw.githubusercontent.com/chilipeppr/widget-console/master/auto-generated-widget.html",
+      "http://raw.githubusercontent.com/Carol111/widget-console/master/auto-generated-widget.html",
     //   "http://widget-console-chilipeppr.c9users.io/widget.html",
       function() {
         // Callback after widget loaded into #myDivWidgetSpconsole
