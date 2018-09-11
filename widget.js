@@ -121,17 +121,17 @@ cprequire_test(["inline:com-chilipeppr-widget-serialport"], function (sp) {
     
     // we need to also load the serial port console to make sure they are synced
     // Inject new div to contain widget or use an existing div with an ID
-    $("body").append('<' + 'div id="com-chilipeppr-widget-serialport"><' + '/div>');
+    $("body").append('<' + 'div id="myDivWidgetSpconsole"><' + '/div>');
     
     chilipeppr.load(
-      "#com-chilipeppr-widget-serialport",
-      "http://raw.githubusercontent.com/Carol111/widget-console/master/auto-generated-widget.html",
+      "#myDivWidgetSpconsole",
+      "http://raw.githubusercontent.com/chilipeppr/widget-console/master/auto-generated-widget.html",
     //   "http://widget-console-chilipeppr.c9users.io/widget.html",
       function() {
         // Callback after widget loaded into #myDivWidgetSpconsole
         // Now use require.js to get reference to instantiated widget
         cprequire(
-          ["inline:com-chilipeppr-widget-serialport"], // the id you gave your widget
+          ["inline:com-chilipeppr-widget-spconsole"], // the id you gave your widget
           function(myObjWidgetSpconsole) {
             // Callback that is passed reference to the newly loaded widget
             console.log("Widget / Serial Port Console v1.7 just got loaded.", myObjWidgetSpconsole);
@@ -146,7 +146,7 @@ cprequire_test(["inline:com-chilipeppr-widget-serialport"], function (sp) {
 cpdefine("inline:com-chilipeppr-widget-serialport", ["chilipeppr_ready", "jquerycookie"], function () {
     return {
         id: "com-chilipeppr-widget-serialport",
-        name: "Widget / Serial Port JSON Server Piezo",
+        name: "Widget / Serial Port JSON Server",
         desc: "The essential widget if you want your workspace to talk to the Serial Port JSON Server (SPJS). This widget enables numerous pubsub signals so you can publish to SPJS and receive data back when you subscribe to the appropriate signals.",
         url: "(auto fill by runme.js)",       // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
         fiddleurl: "(auto fill by runme.js)", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
@@ -2555,7 +2555,7 @@ chilipeppr.publish("/com-chilipeppr-widget-serialport/send", "G1 X10 F500\\n");
             }
         },
         getBaudRates : function() {
-            var bauds = ["2,400", "4,800", "9,600", "19,200", "38,400", "76,800", "115,200", "250,000"];
+            var bauds = ["2,400", "4,800", "9,600", "19,200", "38,400", "57,600", "115,200", "230,400"];
             var baudHtml = "";
             $.each(bauds, function(i, item) {
                 var clean = item.replace(/,/, "");
